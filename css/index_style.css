@@ -1,0 +1,200 @@
+
+
+/* show div with red border*/
+/*
+div{
+    border: 1px solid red;
+}*/
+
+
+body{
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	background-color: #ffffff;
+	color: #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* content */
+
+.content{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+}
+
+/*fill the banner with the image*/
+.banner {
+	position: relative;
+	background-size: cover;
+	background-position: left;
+	background-repeat: no-repeat;
+	width:100%;
+}
+
+.banner video{
+	width: 100%;
+	height: 100%;
+}
+
+/* put the banner_content in the middle of the banners' video.*/
+.banner_content{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.banner_content_top{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: row;
+	gap: 20px;
+}
+
+.banner_content p{
+	background-color: #ffffff;
+	color: #000000;
+	font-family: librebaskerville-bold,Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 30px;
+}
+
+.banner_content_top p{
+	font-size: 30px;
+
+}
+
+.post_button{
+	font-size: 20px;
+}
+
+.banner_content a{
+	text-decoration: none;
+}
+
+.banner_content p:hover {
+	/* a little bit of animation with a smouth darker color */
+	background-color: #4b1919;
+	transform: scale(1.1);
+	transition: 0.5s;
+	color: white;
+}
+
+
+
+
+/* when the page is loaded, the p appears with a little animation */
+.banner_content p{
+	animation: appear 1s;
+}
+
+@keyframes appear{
+	0%{
+		opacity: 0;
+		transform: scale(0.5);
+	}
+	100%{
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+
+
+.banner_content img{
+	width: 200px;
+	height: 200px;
+	/* make the image turn around when the mouse is over it */
+	transform: rotate(0deg);
+	transition: 5s;
+
+}
+
+.banner_content img:hover{
+	transform: rotate(360deg);
+	transition: 5s;
+}
+
+/* when the page is loaded, the img appears with a little animation */
+.banner_content img{
+	animation: rotate 1s;
+}
+
+
+
+
+.cards{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	padding: 0;
+	margin: 30px;
+}
+
+.card{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+}
+
+.left-card,.right-card{
+	width:35%;
+	background-color: #F5F5F5;
+}
+
+.text{
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 0;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+}
+
+.card h2{
+	font-size: 30px;
+	font-family: librebaskerville-bold,Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 10px 20px;
+	border: none;
+	color: #000000;
+}
+
+.card p{
+	font-size: 15px;
+	font-family: librebaskerville-regular,Arial, Helvetica, sans-serif;
+	text-align: justify;
+	border: none;
+	color: #000000;
+}
+
+
+
+.card video{ /* if the video doesn't take all the space, crop it */
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "swapmarket",
+  "version": "1.0.0",
+  "description": "projet transverse",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async_hooks": "^1.0.0",
+    "fs": "^0.0.1-security",
+    "required": "^1.0.0",
+    "resolve": "^1.22.2",
+    "sneaks-api": "^1.2.3"
+  },
+  "devDependencies": {
+    "webpack": "^5.81.0"
+  }
+}

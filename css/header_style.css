@@ -1,0 +1,102 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* header*/
+/* top header*/
+.top-header{
+    background-color: #000000;
+    text-align: center;
+    padding: 4px;
+    margin: 0;
+    /* on top of the body */
+}
+.top-header p{
+    font-size: 13px;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+/* bottom header*/
+.bottom-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left-side{
+    width: 100%;
+
+}
+.logo a{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    text-decoration: none;
+}
+
+#logo_img{
+    height: 50px;
+    margin-right: 20px;
+}
+
+#logo_txt{
+    height: 40px;
+}
+
+
+.middle-side, .right-side{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-side{
+    justify-content: flex-end;
+}
+
+.middle-side>.menu ul, .right-side>.menu ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    gap: 30px;
+}
+
+/* when the mouse is over the menu, an animation draws a line under the text*/
+
+
+.middle-side a, .right-side a{
+    color: black;
+    text-decoration: none;
+    position: relative;
+    font-size: 17px;
+}
+
+
+
+.middle-side a::before, .right-side a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1.5px;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.middle-side a:hover::before, .right-side a:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}

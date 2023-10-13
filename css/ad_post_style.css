@@ -1,0 +1,315 @@
+
+/* show div with red border*/
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+}
+
+
+/* content */
+
+.content{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.banner {
+    position: relative; /* Ajout de cette propriété */
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    width:100%;
+}
+
+
+
+.banner video{
+    width: 100%;
+    height: 100%;
+}
+
+.banner_content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    color:white;
+}
+
+/* formulaire */
+
+
+/* Le contenu de la fenêtre modale */
+.post-area {
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fefefe;
+    margin: auto; /* Centre la fenêtre modale horizontalement */
+    padding: 10px;
+    border-radius: 2px;
+    width: 30%;
+    height: 650px;
+}
+
+.post-area>.top{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap:3px;
+    margin-bottom: 10px;
+}
+
+.top div{
+    display: flex;
+    justify-content: center;
+    /* place in the center of the div */
+    width: 100%;
+    border-bottom: 2px solid #BDBDBD;
+}
+
+.top>.selected{
+    border-bottom: 2px solid black;
+}
+
+.form{
+    width: 100%;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.form:not(.selected){
+    display: none;
+}
+
+#sell_form.selected{
+    animation: animateleft 0.5s ease-in-out;
+}
+
+#trade_form.selected{
+    animation: animatebottom 0.5s ease-in-out;
+}
+
+#buy_form.selected{
+    animation: animateright 0.5s ease-in-out;
+}
+
+
+@keyframes animateleft{
+    0%{
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes animatebottom{
+    0%{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes animateright{
+    0%{
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+.form>.input-container, .form>.input-container_radio, .form>.submit-container{
+    width: 95%;
+    height: 50px;
+}
+
+
+.form input{
+    width: 95%;
+    height: 100%;
+    border: 1px solid #BDBDBD;
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: librebaskerville-regular,Arial, Helvetica, sans-serif;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.form>.input-container_select{
+    width: 95%;
+    height: 50px;
+}
+
+.form select{
+    /*center the text*/
+    text-align-last: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #BDBDBD;
+    border-radius: 4px;
+    font-size: 15px;
+    color: #000000;
+    font-family: librebaskerville-regular,Arial, Helvetica, sans-serif;
+}
+
+/* hide the default option */
+.form select option:first-child{
+    display: none;
+}
+
+
+.input-container label, .input-container_select label, .input-container_photo label{
+    position: relative;
+    top: -41px;
+    left: 10px;
+    pointer-events: none;
+    font-size: 15px;
+    font-family: librebaskerville-regular,Arial, Helvetica, sans-serif;
+    color: #BDBDBD;
+    transition: 0.5s;
+}
+
+.form>.input-container input:focus + label, .form>.input-container input:valid + label{
+    top: -60px;
+    font-size: 12px;
+}
+
+.form>.input-container input:valid{
+    border: 1px solid green;
+}
+
+.form>.input-container input:focus{
+    outline: none;
+    border: 1px solid #000000;
+}
+
+
+.input-container_radio{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.input-container_radio input{
+    width: 20px;
+    height: 20px;
+    padding:0;
+    margin: 0 0 0 20px;
+}
+
+.input-container_radio span{
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.input-container_radio label{
+    font-size: 15px;
+    font-family: librebaskerville-regular,Arial, Helvetica, sans-serif;
+    color: #BDBDBD;
+}
+
+.input-container_radio input:checked + label{
+    color: #000000;
+}
+
+
+.input-container_photo{
+    width: 95%;
+    border: 1px solid #BDBDBD;
+    border-radius: 4px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.input-container_photo label{
+    top:0;
+    font-size: 15px;
+    font-family: librebaskerville-regular,Arial, Helvetica, sans-serif;
+
+    color: #000000;
+}
+
+.input-container_photo input{
+    border: none;
+    padding: 10px 0 0;
+    align-self: center;
+}
+
+
+
+.input-container_photo input[type="file"]::file-selector-button{
+    /* change the style of the input button */
+    background-color: rgba(219, 219, 219, 0.86);
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 15px;
+    font-family: librebaskerville-regular,Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+
+
+
+/* if we click on the submit button, and the input is not valid, the border of the input will be red */
+.form>.input-container input:not(:valid):focus{
+    border: 1px solid red;
+}
+
+.submit-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.submit-container input{
+    padding:0;
+    margin:0;
+    background-color: #000000;
+    color: white;
+    border:none;
+}
